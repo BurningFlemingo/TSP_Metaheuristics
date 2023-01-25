@@ -1,0 +1,57 @@
+[
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/build",
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/Main.cpp.o -c /home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Main.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Main.cpp"
+},
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/build",
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/Utils.cpp.o -c /home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Utils.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Utils.cpp"
+},
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/build",
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/Particles.cpp.o -c /home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Particles.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Particles.cpp"
+},
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/build",
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/Application.cpp.o -c /home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Application.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Application.cpp"
+},
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/build",
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/Core/Window.cpp.o -c /home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Core/Window.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Core/Window.cpp"
+},
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/build",
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/Core/EventHandler.cpp.o -c /home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Core/EventHandler.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Core/EventHandler.cpp"
+},
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/build",
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/Renderer/Renderer.cpp.o -c /home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Renderer/Renderer.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Renderer/Renderer.cpp"
+},
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/build",
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/Renderer/Shader.cpp.o -c /home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Renderer/Shader.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Renderer/Shader.cpp"
+},
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/build",
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/Renderer/Shapes.cpp.o -c /home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Renderer/Shapes.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Renderer/Shapes.cpp"
+},
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/build",
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/Renderer/VertexBufferLayout.cpp.o -c /home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Renderer/VertexBufferLayout.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/Renderer/VertexBufferLayout.cpp"
+},
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/build",
+  "command": "/usr/bin/cc  -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/vendor/glad/src/glad.c.o -c /home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/vendor/glad/src/glad.c",
+  "file": "/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/vendor/glad/src/glad.c"
+}
+]
