@@ -50,7 +50,8 @@ void Application::renderInit() {
     int wH = m_WindowProps.windowHeight;
 
     ParticleSystem* particleSystem = new ParticleSystem(m_AppState);
-    particleSystem->createRandomParticles(glm::vec2(wW, wH), 10000, 1, 5);
+    particleSystem->createRandomParticles(glm::vec2(wW, wH), 100000, 1, 5, 1);
+    particleSystem->glSetup();
     m_Systems.emplace_back(particleSystem);
 }
 

@@ -1,7 +1,6 @@
 #include "Utils.h"
 #include "Core/Debug.h"
 
-
 glm::mat4 modelPivotSquare(glm::mat4& model, float rotation, float w, float h, uint pivot) {
     switch (pivot) {
         case 0: {
