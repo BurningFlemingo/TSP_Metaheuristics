@@ -50,7 +50,7 @@ void Application::renderInit() {
     int wH = m_WindowProps.windowHeight;
 
     ParticleSystem* particleSystem = new ParticleSystem(m_AppState);
-    particleSystem->createRandomParticles(glm::vec2(wW, wH), 100000, 1, 5, 1);
+    particleSystem->spawnRandomParticles(glm::vec4(0, wW, 0, wH), 100, 1, 5, 3);
     particleSystem->glSetup();
     m_Systems.emplace_back(particleSystem);
 }
@@ -59,7 +59,7 @@ void Application::mainLoop() {
     while (m_AppState.running) {  // runs at ~19 milliseconds per tick 
         pollEvents(m_AppState, m_Stack);  // 0 - 1 milliseconds
         update(0);
-        measure(render());  // ~17 ms per tick
+        render();  // ~17 ms per tick
     }
 }
 

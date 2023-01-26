@@ -7,10 +7,10 @@
 #include "Utils.h"
 
 struct Particle {
+    float lifetime;
     glm::vec2 position;
-    glm::vec2 direction;
-    float speed;
-    float decay;
+    glm::vec2 forces;
+    float mass;
     CircularBuffer<glm::vec2, 50> previousPositions;
 };
 
@@ -21,7 +21,8 @@ public:
     ParticleSystem(AppState& appState);
     void glSetup();
 
-    void createRandomParticles(glm::vec2 areaSize, uint ammount, float minSpeed, float maxSpeed, uint particleSize);
+    void emitter(glm::vec4 areaSize, uint spawnRate, float lifetime);
+    void spawnRandomParticles(glm::vec4 areaSize, uint ammount, float minSpeed, float maxSpeed, uint particleSize);
 
     void draw() override;
     void update(float dT) override;
@@ -36,7 +37,7 @@ private:
     uint m_ParticleSize;
     std::vector<glm::vec3> m_Translations;
 
-    void createParticle(Particle particle);
+    void spawnParticle(Particle particle);
 };
 
 // void createParticle(uint programID, Particle particle);

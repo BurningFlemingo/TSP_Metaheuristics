@@ -48,37 +48,88 @@ void ParticleSystem::glSetup() {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
-void ParticleSystem::createParticle(Particle particle) {
+void ParticleSystem::spawnParticle(Particle particle) {
     m_Particles.emplace_back(particle);
 }
 
-void ParticleSystem::createRandomParticles(glm::vec2 areaSize, uint ammount, float minSpeed, float maxSpeed, uint particleSize) {
+void ParticleSystem::spawnRandomParticles(glm::vec4 areaSize, uint ammount, float minSpeed, float maxSpeed, uint particleSize) {
     m_ParticleSize = particleSize;
     for (int i = 0; i < ammount; i++) {
         int negativeDirX = 1 + randNum(0, 1) * -2;
         int negativeDirY = 1 + randNum(0, 1) * -2;
-        Particle particle;
-        particle.position.x = randNum(0, areaSize.x);
-        particle.position.y = randNum(0, areaSize.y);
-        particle.speed = randNum((int)minSpeed, (int)maxSpeed);
-        particle.decay = (float)randNum(0, 1000) / 1000;
-        particle.direction.x = ((float)randNum(0, 100) / 100) * negativeDirX;
-        particle.direction.y = ((float)randNum(0, 100) / 100) * negativeDirY;
+        int speed = randNum((int)minSpeed, (int)maxSpeed);
 
-        createParticle(particle);
+        Particle particle;
+        particle.position.x = randNum(areaSize[0], areaSize[1]);
+        particle.position.y = randNum(areaSize[2], areaSize[3]);
+        particle.mass = randNum(2, 5);
+        particle.forces.x = ((float)randNum(0, 100) / 100) * negativeDirX;
+        particle.forces.y = ((float)randNum(0, 100) / 100) * negativeDirY;
+
+        m_ParticleSize = particleSize;
+
+        spawnParticle(particle);
     }
 }
 
 void ParticleSystem::update(float dT) {
     m_Translations.clear();
+
+    std::vector<Particle> particles = m_Particles;
+    float friction = 0.001;
+
     for (int i = 0; i < m_Particles.size(); i++) {
-        Particle& particle = m_Particles[i];
-        particle.position += particle.direction * particle.speed;
-        particle.previousPositions.push(particle.position);
-        for (int i = 0; i < particle.previousPositions.sizeUsed(); i++) {
-            m_Translations.emplace_back(glm::vec3(particle.previousPositions[i], 1.0 / (i * 2) + 0.01));
+        float G = 1.0f;
+
+        for (int j = 0; j < m_Particles.size(); j++) {
+            glm::vec2 r = (m_Particles[j].position) - (m_Particles[i].position); 
+            float magnitude = (sqrt(r.x * r.x + r.y * r.y));
+            float m1 = m_Particles[i].mass;
+            float m2 = m_Particles[j].mass;
+
+            glm::vec2 negative(1, 1);
+            if (r.x < 0) {
+                negative.x = -1;
+            }
+            if (r.y < 0) {
+                negative.y = -1;
+            }
+            if (magnitude == 0) {
+                continue;
+            } 
+            if (magnitude < 10) {
+                magnitude = 10;
+            }
+
+            particles[i].forces += negative * G * (m1 * m2) / (magnitude * magnitude);
+        }
+
+        particles[i].forces += -(particles[i].forces) * friction;
+
+        particles[i].position += particles[i].forces;
+        particles[i].previousPositions.push(particles[i].position);
+
+        if (particles[i].position.x > 960) {
+            particles[i].position.x = 0;
+        }
+        if (particles[i].position.y > 590) {
+            particles[i].position.y = 0;
+        }
+        if (particles[i].position.x < 0) {
+            particles[i].position.x = 960;
+        }
+        if (particles[i].position.y < 0) {
+            particles[i].position.y = 590;
+        }
+
+        for (int j = 0; j < particles[i].previousPositions.size(); j++) {
+            m_Translations.emplace_back(glm::vec3(particles[i].previousPositions[j] - glm::vec2((float)m_ParticleSize / 2), 3.0f / (j + 0.01)));
         }
     }
+
+
+
+    m_Particles = particles;
 }
 
 void ParticleSystem::draw() {
@@ -88,9 +139,10 @@ void ParticleSystem::draw() {
     glCheckError(glBindVertexArray(m_ParticleVAO));
 
     glBindBuffer(GL_ARRAY_BUFFER, m_InstanceVBO);
-    glBufferData(GL_ARRAY_BUFFER, m_Translations.size() * sizeof(glm::vec2), &m_Translations[0], GL_DYNAMIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, m_Translations.size() * sizeof(glm::vec3), &m_Translations[0], GL_DYNAMIC_DRAW);
 
-    glCheckError(glDrawArraysInstanced(GL_TRIANGLE_STRIP, 0, 4, m_Translations.size()));
+    print((m_Particles[0].previousPositions.size()));
+    glCheckError(glDrawArraysInstanced(GL_TRIANGLE_STRIP, 0, 4 * (m_Particles[0].previousPositions.size()), m_Translations.size()));
     glBindVertexArray(0);
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

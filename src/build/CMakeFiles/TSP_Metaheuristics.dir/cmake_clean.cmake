@@ -19,8 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TSP_Metaheuristics.dir/Renderer/VertexBufferLayout.cpp.o.d"
   "CMakeFiles/TSP_Metaheuristics.dir/Utils.cpp.o"
   "CMakeFiles/TSP_Metaheuristics.dir/Utils.cpp.o.d"
-  "CMakeFiles/TSP_Metaheuristics.dir/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/vendor/glad/src/glad.c.o"
-  "CMakeFiles/TSP_Metaheuristics.dir/home/unmeinks/workspace/dev/projects/TSP_Metaheuristics/vendor/glad/src/glad.c.o.d"
+  "CMakeFiles/TSP_Metaheuristics.dir/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/vendor/glad/src/glad.c.o"
+  "CMakeFiles/TSP_Metaheuristics.dir/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/vendor/glad/src/glad.c.o.d"
   "TSP_Metaheuristics"
   "TSP_Metaheuristics.pdb"
 )
