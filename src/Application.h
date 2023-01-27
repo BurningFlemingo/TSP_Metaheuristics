@@ -6,6 +6,7 @@
 #include "Core/EventHandler.h"
 #include "Renderer/Shader.h"
 #include "Renderer/Renderer.h"
+#include "Metaheuristic.h"
 
 class Application {
 public:
@@ -25,5 +26,5 @@ private:
     EventStack m_Stack;
 
     uint m_ProgramID;
-    std::vector<System*> m_Systems;
+    std::vector<Metaheuristic*> m_Metaheuristics;
 };

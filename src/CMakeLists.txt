@@ -13,8 +13,9 @@ add_executable(TSP_Metaheuristics
     Main.cpp
     pch.h
     Utils.cpp
-    Particles.cpp
+    Metaheuristic.cpp
     Application.cpp
+    GravityParticleSystem.cpp
     Core/Window.cpp
     Core/EventHandler.cpp
     Renderer/Renderer.cpp
@@ -22,5 +23,6 @@ add_executable(TSP_Metaheuristics
     Renderer/Shapes.cpp
     Renderer/VertexBufferLayout.cpp
     ../vendor/glad/src/glad.c
+    TSP/TSP.cpp
 )
 target_link_libraries(TSP_Metaheuristics PUBLIC SDL2::SDL2 SDL2::SDL2main)

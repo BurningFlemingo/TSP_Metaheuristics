@@ -201,6 +201,30 @@ Core/Window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Core/Window.cpp.s
 .PHONY : Core/Window.cpp.s
 
+GravityParticleSystem.o: GravityParticleSystem.cpp.o
+.PHONY : GravityParticleSystem.o
+
+# target to build an object file
+GravityParticleSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/GravityParticleSystem.cpp.o
+.PHONY : GravityParticleSystem.cpp.o
+
+GravityParticleSystem.i: GravityParticleSystem.cpp.i
+.PHONY : GravityParticleSystem.i
+
+# target to preprocess a source file
+GravityParticleSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/GravityParticleSystem.cpp.i
+.PHONY : GravityParticleSystem.cpp.i
+
+GravityParticleSystem.s: GravityParticleSystem.cpp.s
+.PHONY : GravityParticleSystem.s
+
+# target to generate assembly for a file
+GravityParticleSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/GravityParticleSystem.cpp.s
+.PHONY : GravityParticleSystem.cpp.s
+
 Main.o: Main.cpp.o
 .PHONY : Main.o
 
@@ -225,29 +249,29 @@ Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
-Particles.o: Particles.cpp.o
-.PHONY : Particles.o
+Metaheuristic.o: Metaheuristic.cpp.o
+.PHONY : Metaheuristic.o
 
 # target to build an object file
-Particles.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Particles.cpp.o
-.PHONY : Particles.cpp.o
+Metaheuristic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Metaheuristic.cpp.o
+.PHONY : Metaheuristic.cpp.o
 
-Particles.i: Particles.cpp.i
-.PHONY : Particles.i
+Metaheuristic.i: Metaheuristic.cpp.i
+.PHONY : Metaheuristic.i
 
 # target to preprocess a source file
-Particles.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Particles.cpp.i
-.PHONY : Particles.cpp.i
+Metaheuristic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Metaheuristic.cpp.i
+.PHONY : Metaheuristic.cpp.i
 
-Particles.s: Particles.cpp.s
-.PHONY : Particles.s
+Metaheuristic.s: Metaheuristic.cpp.s
+.PHONY : Metaheuristic.s
 
 # target to generate assembly for a file
-Particles.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Particles.cpp.s
-.PHONY : Particles.cpp.s
+Metaheuristic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Metaheuristic.cpp.s
+.PHONY : Metaheuristic.cpp.s
 
 Renderer/Renderer.o: Renderer/Renderer.cpp.o
 .PHONY : Renderer/Renderer.o
@@ -345,6 +369,30 @@ Renderer/VertexBufferLayout.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Renderer/VertexBufferLayout.cpp.s
 .PHONY : Renderer/VertexBufferLayout.cpp.s
 
+TSP/TSP.o: TSP/TSP.cpp.o
+.PHONY : TSP/TSP.o
+
+# target to build an object file
+TSP/TSP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/TSP/TSP.cpp.o
+.PHONY : TSP/TSP.cpp.o
+
+TSP/TSP.i: TSP/TSP.cpp.i
+.PHONY : TSP/TSP.i
+
+# target to preprocess a source file
+TSP/TSP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/TSP/TSP.cpp.i
+.PHONY : TSP/TSP.cpp.i
+
+TSP/TSP.s: TSP/TSP.cpp.s
+.PHONY : TSP/TSP.s
+
+# target to generate assembly for a file
+TSP/TSP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/TSP/TSP.cpp.s
+.PHONY : TSP/TSP.cpp.s
+
 Utils.o: Utils.cpp.o
 .PHONY : Utils.o
 
@@ -411,12 +459,15 @@ help:
 	@echo "... Core/Window.o"
 	@echo "... Core/Window.i"
 	@echo "... Core/Window.s"
+	@echo "... GravityParticleSystem.o"
+	@echo "... GravityParticleSystem.i"
+	@echo "... GravityParticleSystem.s"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"
-	@echo "... Particles.o"
-	@echo "... Particles.i"
-	@echo "... Particles.s"
+	@echo "... Metaheuristic.o"
+	@echo "... Metaheuristic.i"
+	@echo "... Metaheuristic.s"
 	@echo "... Renderer/Renderer.o"
 	@echo "... Renderer/Renderer.i"
 	@echo "... Renderer/Renderer.s"
@@ -429,6 +480,9 @@ help:
 	@echo "... Renderer/VertexBufferLayout.o"
 	@echo "... Renderer/VertexBufferLayout.i"
 	@echo "... Renderer/VertexBufferLayout.s"
+	@echo "... TSP/TSP.o"
+	@echo "... TSP/TSP.i"
+	@echo "... TSP/TSP.s"
 	@echo "... Utils.o"
 	@echo "... Utils.i"
 	@echo "... Utils.s"

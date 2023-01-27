@@ -2,7 +2,7 @@
 #include "Renderer/Renderer.h"
 #include "Renderer/Shader.h"
 #include "Renderer/Shapes.h"
-#include "Particles.h"
+#include "GravityParticleSystem.h"
 
 float rotation = 0;
 int tick = 0;
@@ -49,10 +49,9 @@ void Application::renderInit() {
     int wW = m_WindowProps.windowWidth;
     int wH = m_WindowProps.windowHeight;
 
-    ParticleSystem* particleSystem = new ParticleSystem(m_AppState);
-    particleSystem->spawnRandomParticles(glm::vec4(0, wW, 0, wH), 100, 1, 5, 3);
-    particleSystem->glSetup();
-    m_Systems.emplace_back(particleSystem);
+    GPS* gps = new GPS({100, 1});  // ammount, size
+    gps->spawnRandomParticles(glm::vec4(0, wW, 0, wH), 1, 10);
+    m_Metaheuristics.emplace_back(gps);
 }
 
 void Application::mainLoop() {
@@ -64,15 +63,15 @@ void Application::mainLoop() {
 }
 
 void Application::update(float dT) {
-    for (auto& system : m_Systems) {
-        system->update(dT);
+    for (auto& metaheuristic : m_Metaheuristics) {
+        metaheuristic->update(dT);
     }
 }
 
 void Application::render() {
     glClear(GL_COLOR_BUFFER_BIT);
-    for (auto& system : m_Systems) {
-        system->draw();
+    for (auto& metaheuristic : m_Metaheuristics) {
+        metaheuristic->draw();
     }
     SDL_GL_SwapWindow(m_Window.window);
 }
