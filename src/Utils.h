@@ -26,3 +26,15 @@ private:
 glm::mat4 modelPivotSquare(glm::mat4& model, float rotation, float w, float h, uint pivot);
 int randNum(int min, int max);
 
+template<typename T>
+class ChronoClock {
+public:
+    inline void startTimer() {
+        m_StartTime = std::chrono::high_resolution_clock::now();
+    };
+    inline uint64_t endTimer() {
+        return std::chrono::duration_cast<T>(std::chrono::high_resolution_clock::now() - m_StartTime).count();
+    }
+private:
+    std::chrono::high_resolution_clock::time_point m_StartTime;
+};

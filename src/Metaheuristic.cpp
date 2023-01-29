@@ -3,16 +3,13 @@
 #include "Core/Debug.h"
 #include "Renderer/Shader.h"
 
-// std::vector<Particle> particles;
-// std::vector<uint> particleVAOs;
-
 Metaheuristic::Metaheuristic(const ParticlePropertys& particleProps)
-: m_ProgramID(0), m_ParticleVAO(0), m_InstanceVBO(0), m_ParticleProps(particleProps) {
+: m_ProgramID(0), m_ParticleVAO(0), m_InstanceVBO(0), m_ParticleProps(particleProps), m_VerticesPerShape(4) {
     glSetup();
 }
 
 void Metaheuristic::glSetup() {
-    m_ProgramID = setupShaders("../res/Shaders/Particle.vs", "../res/Shaders/Particle.fs");
+    m_ProgramID = setupShaders("../res/Shaders/Particle.vert", "../res/Shaders/Particle.frag");
 
     glUseProgram(m_ProgramID);
     setUniform4m(m_ProgramID, "projection", getProjectionMatrix());
@@ -21,10 +18,10 @@ void Metaheuristic::glSetup() {
     glCheckError(glBindVertexArray(m_ParticleVAO));
 
     float vertices[] = {
-        0.0, 0.0,  // bottom left
-        0.0, (float)(1.0 * m_ParticleProps.size),  // top Right
-        (float)(1.0 * m_ParticleProps.size), 0.0,  // top left
-        (float)(1.0 * m_ParticleProps.size), (float)(1.0 * m_ParticleProps.size)  // top right
+        0.0, 0.0,  // top left
+        (float)(1.0 * m_ParticleProps.size), 0.0,  // top right
+        0.0, (float)(1.0 * m_ParticleProps.size),  // bottom left
+        (float)(1.0 * m_ParticleProps.size), (float)(1.0 * m_ParticleProps.size),  // bottom right
     };
 
     uint quadVBO;
@@ -39,7 +36,7 @@ void Metaheuristic::glSetup() {
     glBindBuffer(GL_ARRAY_BUFFER, m_InstanceVBO);
     glBufferData(GL_ARRAY_BUFFER, m_Translations.size() * sizeof(glm::vec2), &m_Translations[0], GL_DYNAMIC_DRAW);
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
     glVertexAttribDivisor(1, 1);
 
     setUniform4m(m_ProgramID, "projection", getProjectionMatrix());
@@ -55,9 +52,9 @@ void Metaheuristic::draw() {
     glCheckError(glBindVertexArray(m_ParticleVAO));
 
     glBindBuffer(GL_ARRAY_BUFFER, m_InstanceVBO);
-    glBufferData(GL_ARRAY_BUFFER, m_Translations.size() * sizeof(glm::vec3), &m_Translations[0], GL_DYNAMIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, m_Translations.size() * sizeof(glm::vec4), &m_Translations[0], GL_DYNAMIC_DRAW);
 
-    glCheckError(glDrawArraysInstanced(GL_TRIANGLE_STRIP, 0, m_VerticesPerShape, m_Translations.size()));
+    glCheckError(glDrawArraysInstanced(GL_TRIANGLE_STRIP, 0, 8, m_Translations.size()));
     glBindVertexArray(0);
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

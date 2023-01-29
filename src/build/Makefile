@@ -225,6 +225,30 @@ GravityParticleSystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/GravityParticleSystem.cpp.s
 .PHONY : GravityParticleSystem.cpp.s
 
+LorenzAttractor.o: LorenzAttractor.cpp.o
+.PHONY : LorenzAttractor.o
+
+# target to build an object file
+LorenzAttractor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/LorenzAttractor.cpp.o
+.PHONY : LorenzAttractor.cpp.o
+
+LorenzAttractor.i: LorenzAttractor.cpp.i
+.PHONY : LorenzAttractor.i
+
+# target to preprocess a source file
+LorenzAttractor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/LorenzAttractor.cpp.i
+.PHONY : LorenzAttractor.cpp.i
+
+LorenzAttractor.s: LorenzAttractor.cpp.s
+.PHONY : LorenzAttractor.s
+
+# target to generate assembly for a file
+LorenzAttractor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/LorenzAttractor.cpp.s
+.PHONY : LorenzAttractor.cpp.s
+
 Main.o: Main.cpp.o
 .PHONY : Main.o
 
@@ -462,6 +486,9 @@ help:
 	@echo "... GravityParticleSystem.o"
 	@echo "... GravityParticleSystem.i"
 	@echo "... GravityParticleSystem.s"
+	@echo "... LorenzAttractor.o"
+	@echo "... LorenzAttractor.i"
+	@echo "... LorenzAttractor.s"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"

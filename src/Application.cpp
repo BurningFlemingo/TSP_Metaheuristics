@@ -3,9 +3,9 @@
 #include "Renderer/Shader.h"
 #include "Renderer/Shapes.h"
 #include "GravityParticleSystem.h"
+#include "LorenzAttractor.h"
 
 float rotation = 0;
-int tick = 0;
 
 void rotateRight() {
     rotation += 3;
@@ -37,7 +37,7 @@ void Application::renderInit() {
     m_ProgramID = setupShaders("../res/Shaders/VertexShader.glsl", "../res/Shaders/FragmentShader.glsl"); 
     glUseProgram(m_ProgramID);
 
-    setProjectionMatrix(0, m_WindowProps.windowWidth, m_WindowProps.windowHeight, 0, -1, 1);
+    setProjectionMatrix(0, m_WindowProps.windowWidth, m_WindowProps.windowHeight, 0, -1000, 1000);
 
     subscribeToKeyEvent(m_Stack, "s", &rotateRight);    
     subscribeToKeyEvent(m_Stack, "a", &rotateLeft);    
@@ -49,16 +49,21 @@ void Application::renderInit() {
     int wW = m_WindowProps.windowWidth;
     int wH = m_WindowProps.windowHeight;
 
-    GPS* gps = new GPS({100, 1});  // ammount, size
-    gps->spawnRandomParticles(glm::vec4(0, wW, 0, wH), 1, 10);
-    m_Metaheuristics.emplace_back(gps);
+    LorenzAttractor* lR = new LorenzAttractor({100, 2}, 10, 28, (8.0/3.0));  // ammount, size
+    lR->spawnRandomParticles({1, 2}, {1, 2}, {1, 2});
+    m_Metaheuristics.emplace_back(lR);
+    // GPS* gps = new GPS({100, 10}, &rotation);
+    // gps->spawnRandomParticles({0, 250, 0, 250}, 5, 10);
+    // m_Metaheuristics.emplace_back(gps);
 }
 
 void Application::mainLoop() {
     while (m_AppState.running) {  // runs at ~19 milliseconds per tick 
         pollEvents(m_AppState, m_Stack);  // 0 - 1 milliseconds
-        update(0);
+        m_Clock.startTimer();
+        update(0.01);
         render();  // ~17 ms per tick
+        print(m_Clock.endTimer());
     }
 }
 

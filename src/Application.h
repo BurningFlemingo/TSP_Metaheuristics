@@ -7,6 +7,7 @@
 #include "Renderer/Shader.h"
 #include "Renderer/Renderer.h"
 #include "Metaheuristic.h"
+#include "Utils.h"
 
 class Application {
 public:
@@ -27,4 +28,7 @@ private:
 
     uint m_ProgramID;
     std::vector<Metaheuristic*> m_Metaheuristics;
+
+
+    ChronoClock<std::chrono::milliseconds> m_Clock;
 };

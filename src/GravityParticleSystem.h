@@ -1,12 +1,11 @@
 #pragma once
 
-#pragma once
 #include "pch.h"
 #include "Metaheuristic.h"
 
 class GPS : public Metaheuristic {
 public:
-    GPS(const ParticlePropertys& particleProps);
+    GPS(const ParticlePropertys& particleProps, float* rotation);
     ~GPS() {}
    
     void update(float dT) override;
@@ -15,17 +14,19 @@ public:
 private:
     struct Particle {
         Particle()
-        : position(0.0f), velocity(0.0f), color(1.0f), size(1.0f), mass(1.0f) {}
+        : position(0.0f), velocity(0.0f), size(1.0f), mass(1.0f) {}
 
         glm::vec2 position;
         glm::vec2 velocity;
-        glm::vec4 color;
+        float rotation;
         float size;
         float mass;
-        CircularBuffer<glm::vec2, 50> previousPositions;
+        CircularBuffer<float, 25> previousRotations;
+        CircularBuffer<glm::vec2, 25> previousPositions;
     };
 
     std::vector<Particle> m_Particles;
+    float* m_Rotation;
 
     void spawnParticle(const Particle& particle);
 };

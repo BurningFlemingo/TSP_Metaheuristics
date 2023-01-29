@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TSP_Metaheuristics.dir/Core/Window.cpp.o.d"
   "CMakeFiles/TSP_Metaheuristics.dir/GravityParticleSystem.cpp.o"
   "CMakeFiles/TSP_Metaheuristics.dir/GravityParticleSystem.cpp.o.d"
+  "CMakeFiles/TSP_Metaheuristics.dir/LorenzAttractor.cpp.o"
+  "CMakeFiles/TSP_Metaheuristics.dir/LorenzAttractor.cpp.o.d"
   "CMakeFiles/TSP_Metaheuristics.dir/Main.cpp.o"
   "CMakeFiles/TSP_Metaheuristics.dir/Main.cpp.o.d"
   "CMakeFiles/TSP_Metaheuristics.dir/Metaheuristic.cpp.o"
