@@ -2,8 +2,7 @@
 #include "Renderer/Renderer.h"
 #include "Renderer/Shader.h"
 #include "Renderer/Shapes.h"
-#include "GravityParticleSystem.h"
-#include "LorenzAttractor.h"
+#include "Compute.h"
 
 float rotation = 0;
 
@@ -20,6 +19,12 @@ Application::Application(const WindowPropertys& windowProps) : m_WindowProps(win
 
     srand(time(0));
 
+    ComputeSettings settings;
+    settings.windowDimensions = glm::vec2(m_WindowProps.windowWidth, m_WindowProps.windowHeight);
+    settings.scale = 1.0f;
+    settings.workGoupSize = 128;
+    m_Template = std::make_unique<Compute>(settings);
+
     m_AppState.running = true;
 }
 
@@ -34,49 +39,38 @@ void Application::renderInit() {
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    m_ProgramID = setupShaders("../res/Shaders/VertexShader.glsl", "../res/Shaders/FragmentShader.glsl"); 
-    glUseProgram(m_ProgramID);
-
-    setProjectionMatrix(0, m_WindowProps.windowWidth, m_WindowProps.windowHeight, 0, -1000, 1000);
+    setProjectionMatrix(0, m_WindowProps.windowWidth, m_WindowProps.windowHeight, 0, 0, 1);
 
     subscribeToKeyEvent(m_Stack, "s", &rotateRight);    
     subscribeToKeyEvent(m_Stack, "a", &rotateLeft);    
 
-    setUniform4m(m_ProgramID, "projection", getProjectionMatrix());
+    // setUniform4m(m_ProgramID, "projection", getProjectionMatrix());
 
     int halfW = m_WindowProps.windowWidth / 2;
     int halfH = m_WindowProps.windowHeight / 2;
     int wW = m_WindowProps.windowWidth;
     int wH = m_WindowProps.windowHeight;
 
-    LorenzAttractor* lR = new LorenzAttractor({100, 2}, 10, 28, (8.0/3.0));  // ammount, size
-    lR->spawnRandomParticles({1, 2}, {1, 2}, {1, 2});
-    m_Metaheuristics.emplace_back(lR);
-    // GPS* gps = new GPS({100, 10}, &rotation);
-    // gps->spawnRandomParticles({0, 250, 0, 250}, 5, 10);
-    // m_Metaheuristics.emplace_back(gps);
+    m_Template->glSetup();
 }
 
 void Application::mainLoop() {
-    while (m_AppState.running) {  // runs at ~19 milliseconds per tick 
-        pollEvents(m_AppState, m_Stack);  // 0 - 1 milliseconds
+    while (m_AppState.running) {
+        pollEvents(m_AppState, m_Stack);
         m_Clock.startTimer();
-        update(0.01);
-        render();  // ~17 ms per tick
+        // update(0.01);
+        render();
         print(m_Clock.endTimer());
     }
 }
 
 void Application::update(float dT) {
-    for (auto& metaheuristic : m_Metaheuristics) {
-        metaheuristic->update(dT);
-    }
 }
 
 void Application::render() {
-    glClear(GL_COLOR_BUFFER_BIT);
-    for (auto& metaheuristic : m_Metaheuristics) {
-        metaheuristic->draw();
-    }
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    m_Template->draw();
+
     SDL_GL_SwapWindow(m_Window.window);
 }

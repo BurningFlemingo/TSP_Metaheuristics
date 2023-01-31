@@ -15,8 +15,7 @@ add_executable(TSP_Metaheuristics
     Utils.cpp
     Metaheuristic.cpp
     Application.cpp
-    GravityParticleSystem.cpp
-    LorenzAttractor.cpp
+    Compute.cpp
     Core/Window.cpp
     Core/EventHandler.cpp
     Renderer/Renderer.cpp

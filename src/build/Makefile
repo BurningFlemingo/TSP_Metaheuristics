@@ -153,6 +153,30 @@ Application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Application.cpp.s
 .PHONY : Application.cpp.s
 
+Compute.o: Compute.cpp.o
+.PHONY : Compute.o
+
+# target to build an object file
+Compute.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Compute.cpp.o
+.PHONY : Compute.cpp.o
+
+Compute.i: Compute.cpp.i
+.PHONY : Compute.i
+
+# target to preprocess a source file
+Compute.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Compute.cpp.i
+.PHONY : Compute.cpp.i
+
+Compute.s: Compute.cpp.s
+.PHONY : Compute.s
+
+# target to generate assembly for a file
+Compute.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Compute.cpp.s
+.PHONY : Compute.cpp.s
+
 Core/EventHandler.o: Core/EventHandler.cpp.o
 .PHONY : Core/EventHandler.o
 
@@ -200,54 +224,6 @@ Core/Window.s: Core/Window.cpp.s
 Core/Window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Core/Window.cpp.s
 .PHONY : Core/Window.cpp.s
-
-GravityParticleSystem.o: GravityParticleSystem.cpp.o
-.PHONY : GravityParticleSystem.o
-
-# target to build an object file
-GravityParticleSystem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/GravityParticleSystem.cpp.o
-.PHONY : GravityParticleSystem.cpp.o
-
-GravityParticleSystem.i: GravityParticleSystem.cpp.i
-.PHONY : GravityParticleSystem.i
-
-# target to preprocess a source file
-GravityParticleSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/GravityParticleSystem.cpp.i
-.PHONY : GravityParticleSystem.cpp.i
-
-GravityParticleSystem.s: GravityParticleSystem.cpp.s
-.PHONY : GravityParticleSystem.s
-
-# target to generate assembly for a file
-GravityParticleSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/GravityParticleSystem.cpp.s
-.PHONY : GravityParticleSystem.cpp.s
-
-LorenzAttractor.o: LorenzAttractor.cpp.o
-.PHONY : LorenzAttractor.o
-
-# target to build an object file
-LorenzAttractor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/LorenzAttractor.cpp.o
-.PHONY : LorenzAttractor.cpp.o
-
-LorenzAttractor.i: LorenzAttractor.cpp.i
-.PHONY : LorenzAttractor.i
-
-# target to preprocess a source file
-LorenzAttractor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/LorenzAttractor.cpp.i
-.PHONY : LorenzAttractor.cpp.i
-
-LorenzAttractor.s: LorenzAttractor.cpp.s
-.PHONY : LorenzAttractor.s
-
-# target to generate assembly for a file
-LorenzAttractor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/LorenzAttractor.cpp.s
-.PHONY : LorenzAttractor.cpp.s
 
 Main.o: Main.cpp.o
 .PHONY : Main.o
@@ -477,18 +453,15 @@ help:
 	@echo "... Application.o"
 	@echo "... Application.i"
 	@echo "... Application.s"
+	@echo "... Compute.o"
+	@echo "... Compute.i"
+	@echo "... Compute.s"
 	@echo "... Core/EventHandler.o"
 	@echo "... Core/EventHandler.i"
 	@echo "... Core/EventHandler.s"
 	@echo "... Core/Window.o"
 	@echo "... Core/Window.i"
 	@echo "... Core/Window.s"
-	@echo "... GravityParticleSystem.o"
-	@echo "... GravityParticleSystem.i"
-	@echo "... GravityParticleSystem.s"
-	@echo "... LorenzAttractor.o"
-	@echo "... LorenzAttractor.i"
-	@echo "... LorenzAttractor.s"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"

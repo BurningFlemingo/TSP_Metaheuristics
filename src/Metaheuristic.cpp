@@ -9,7 +9,7 @@ Metaheuristic::Metaheuristic(const ParticlePropertys& particleProps)
 }
 
 void Metaheuristic::glSetup() {
-    m_ProgramID = setupShaders("../res/Shaders/Particle.vert", "../res/Shaders/Particle.frag");
+    m_ProgramID = createShaders({ "../res/Shaders/Particle.vert", "../res/Shaders/Particle.frag" }, { GL_VERTEX_SHADER, GL_FRAGMENT_SHADER });
 
     glUseProgram(m_ProgramID);
     setUniform4m(m_ProgramID, "projection", getProjectionMatrix());
@@ -54,7 +54,7 @@ void Metaheuristic::draw() {
     glBindBuffer(GL_ARRAY_BUFFER, m_InstanceVBO);
     glBufferData(GL_ARRAY_BUFFER, m_Translations.size() * sizeof(glm::vec4), &m_Translations[0], GL_DYNAMIC_DRAW);
 
-    glCheckError(glDrawArraysInstanced(GL_TRIANGLE_STRIP, 0, 8, m_Translations.size()));
+    glCheckError(glDrawArraysInstanced(GL_TRIANGLE_STRIP, 0, m_VerticesPerShape, m_Translations.size()));
     glBindVertexArray(0);
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

@@ -8,6 +8,7 @@
 #include "Renderer/Renderer.h"
 #include "Metaheuristic.h"
 #include "Utils.h"
+#include "Compute.h"
 
 class Application {
 public:
@@ -29,6 +30,7 @@ private:
     uint m_ProgramID;
     std::vector<Metaheuristic*> m_Metaheuristics;
 
+    std::unique_ptr<Compute> m_Template;
 
     ChronoClock<std::chrono::milliseconds> m_Clock;
 };

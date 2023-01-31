@@ -43,28 +43,37 @@ uint compileShader(const std::string& shaderSource, uint shaderType) {
     return shaderID;
 }
 
-uint createProgram(uint vertexShaderID, uint fragmentShaderID) {
+uint createProgram(std::vector<uint> shaders) {
     uint programID = glCreateProgram();
 
-    glAttachShader(programID, vertexShaderID);
-    glAttachShader(programID, fragmentShaderID);
+    for (auto shader : shaders) {
+        glAttachShader(programID, shader);
+    }
 
     glLinkProgram(programID);
 
-    glDeleteShader(vertexShaderID);
-    glDeleteShader(fragmentShaderID);
+    for (auto shader : shaders) {
+        glDeleteShader(shader);
+    }
 
     return programID;
 }
 
-uint setupShaders(const std::string& vertexShaderPath, const std::string& fragmentShaderPath) {
-    std::string vertexShaderString = parseShader(vertexShaderPath);
-    std::string fragmentShaderString = parseShader(fragmentShaderPath);
+uint createShaders(const std::vector<std::string>& shaderLocations, const std::vector<GLuint> shaderTypes) {
+    std::vector<std::string> shaderStrings;
+    std::vector<uint> shaderIDs;
+    uint programID;
 
-    uint vertexShaderID = compileShader(vertexShaderString, GL_VERTEX_SHADER);
-    uint fragmentShaderID = compileShader(fragmentShaderString, GL_FRAGMENT_SHADER);
+    for (const auto& location : shaderLocations) {
+        shaderStrings.emplace_back(parseShader(location)); 
+    }
+    for (int i = 0; i < shaderStrings.size(); i++) {
+        const char* src = shaderStrings[i].c_str();
 
-    return createProgram(vertexShaderID, fragmentShaderID);
+        shaderIDs.emplace_back(compileShader(src, shaderTypes[i]));
+    }
+
+    return createProgram(shaderIDs);
 }
 
 int getUniformLocation(uint programID, const std::string& name) {
@@ -96,10 +105,10 @@ void setUniform3v(uint programID, const std::string& name, const glm::vec3& valu
     }
 }
 void setUniform4v(uint programID, const std::string& name, const glm::vec4& value) {
-    if (sizeof(value[0]) == sizeof(int)) {
-        glUniform4i(getUniformLocation(programID, name), value[0], value[1], value[2], value[3]);
-    } else {
+    if (sizeof(value[0]) != sizeof(int)) {
         glUniform4f(getUniformLocation(programID, name), value[0], value[1], value[2], value[3]);
+    } else {
+        glUniform4i(getUniformLocation(programID, name), value[0], value[1], value[2], value[3]);
     }
 }
 void setUniform4m(uint programID, const std::string& name, const glm::mat4& matrix) {

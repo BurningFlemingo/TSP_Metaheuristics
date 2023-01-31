@@ -4,8 +4,8 @@
 
 std::string parseShader(const std::string& filePath);
 uint compileShader(const std::string& shaderSource, uint shaderType);
-uint createProgram(uint vertexShaderID, uint fragmentShaderID);
-uint setupShaders(const std::string& vertexShaderPath, const std::string& fragmentShaderPath);
+uint createProgram(std::vector<uint> shaders);
+uint createShaders(const std::vector<std::string>& shaderLocations, const std::vector<GLuint> shaderTypes);
 
 int getUniformLocation(uint programID, const std::string& name);
 

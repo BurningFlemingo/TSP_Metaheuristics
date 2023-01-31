@@ -75,6 +75,13 @@ Window& createWindow(const WindowPropertys& windowProps) {
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, true);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
 
+    // SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
+    // SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 2);
+
+    // SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
+
+    // glEnable(GL_MULTISAMPLE);
+
     Window* window = new Window;
 
     window->window = SDL_CreateWindow(windowProps.title.c_str(),
