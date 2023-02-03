@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.7)
 project(TSP_Metaheuristics)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+SET(CMAKE_CXX_FLAGS  ${CMAKE_CXX_FLAGS})
 
 find_package(SDL2 REQUIRED)
 include_directories(TSP_Metaheuristics ${CMAKE_CURRENT_SOURCE_DIR} 
@@ -15,7 +16,9 @@ add_executable(TSP_Metaheuristics
     Utils.cpp
     Metaheuristic.cpp
     Application.cpp
-    Compute.cpp
+    ICompute.cpp
+    ComputeShaders/LorenzAttractor.cpp
+    ComputeShaders/SlimeMold.cpp
     Core/Window.cpp
     Core/EventHandler.cpp
     Renderer/Renderer.cpp

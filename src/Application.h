@@ -8,7 +8,8 @@
 #include "Renderer/Renderer.h"
 #include "Metaheuristic.h"
 #include "Utils.h"
-#include "Compute.h"
+#include "ICompute.h"
+#include "ComputeShaders/LorenzAttractor.h"
 
 class Application {
 public:
@@ -18,9 +19,6 @@ public:
     void renderInit();
 
     void mainLoop();
-    void update(float dT);
-    void render();
-    
 private:
     Window m_Window;
     WindowPropertys m_WindowProps;
@@ -30,7 +28,16 @@ private:
     uint m_ProgramID;
     std::vector<Metaheuristic*> m_Metaheuristics;
 
-    std::unique_ptr<Compute> m_Template;
+    std::vector<std::unique_ptr<ICompute>> m_ComputeShaders;
 
-    ChronoClock<std::chrono::milliseconds> m_Clock;
+    ChronoClock<std::chrono::microseconds> m_Clock;
+    float m_DeltaTime;
+    uint32_t m_LastTime;
+    float m_MaxDeltaTime;
+    float m_MinDeltaTime;
+
+    void deltaUpdate();
+    void render();
+
+    uint32_t m_Frames;
 };

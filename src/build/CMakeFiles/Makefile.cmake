@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/CMakeLists.txt"
-  "CMakeFiles/3.25.1/CMakeCCompiler.cmake"
-  "CMakeFiles/3.25.1/CMakeCXXCompiler.cmake"
-  "CMakeFiles/3.25.1/CMakeSystem.cmake"
+  "CMakeFiles/3.25.2/CMakeCCompiler.cmake"
+  "CMakeFiles/3.25.2/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.25.2/CMakeSystem.cmake"
   "/usr/lib/cmake/SDL2/SDL2Config.cmake"
   "/usr/lib/cmake/SDL2/SDL2ConfigVersion.cmake"
   "/usr/lib/cmake/SDL2/SDL2Targets-noconfig.cmake"

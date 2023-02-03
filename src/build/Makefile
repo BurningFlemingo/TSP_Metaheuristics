@@ -153,29 +153,53 @@ Application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Application.cpp.s
 .PHONY : Application.cpp.s
 
-Compute.o: Compute.cpp.o
-.PHONY : Compute.o
+ComputeShaders/LorenzAttractor.o: ComputeShaders/LorenzAttractor.cpp.o
+.PHONY : ComputeShaders/LorenzAttractor.o
 
 # target to build an object file
-Compute.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Compute.cpp.o
-.PHONY : Compute.cpp.o
+ComputeShaders/LorenzAttractor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/ComputeShaders/LorenzAttractor.cpp.o
+.PHONY : ComputeShaders/LorenzAttractor.cpp.o
 
-Compute.i: Compute.cpp.i
-.PHONY : Compute.i
+ComputeShaders/LorenzAttractor.i: ComputeShaders/LorenzAttractor.cpp.i
+.PHONY : ComputeShaders/LorenzAttractor.i
 
 # target to preprocess a source file
-Compute.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Compute.cpp.i
-.PHONY : Compute.cpp.i
+ComputeShaders/LorenzAttractor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/ComputeShaders/LorenzAttractor.cpp.i
+.PHONY : ComputeShaders/LorenzAttractor.cpp.i
 
-Compute.s: Compute.cpp.s
-.PHONY : Compute.s
+ComputeShaders/LorenzAttractor.s: ComputeShaders/LorenzAttractor.cpp.s
+.PHONY : ComputeShaders/LorenzAttractor.s
 
 # target to generate assembly for a file
-Compute.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Compute.cpp.s
-.PHONY : Compute.cpp.s
+ComputeShaders/LorenzAttractor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/ComputeShaders/LorenzAttractor.cpp.s
+.PHONY : ComputeShaders/LorenzAttractor.cpp.s
+
+ComputeShaders/SlimeMold.o: ComputeShaders/SlimeMold.cpp.o
+.PHONY : ComputeShaders/SlimeMold.o
+
+# target to build an object file
+ComputeShaders/SlimeMold.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/ComputeShaders/SlimeMold.cpp.o
+.PHONY : ComputeShaders/SlimeMold.cpp.o
+
+ComputeShaders/SlimeMold.i: ComputeShaders/SlimeMold.cpp.i
+.PHONY : ComputeShaders/SlimeMold.i
+
+# target to preprocess a source file
+ComputeShaders/SlimeMold.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/ComputeShaders/SlimeMold.cpp.i
+.PHONY : ComputeShaders/SlimeMold.cpp.i
+
+ComputeShaders/SlimeMold.s: ComputeShaders/SlimeMold.cpp.s
+.PHONY : ComputeShaders/SlimeMold.s
+
+# target to generate assembly for a file
+ComputeShaders/SlimeMold.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/ComputeShaders/SlimeMold.cpp.s
+.PHONY : ComputeShaders/SlimeMold.cpp.s
 
 Core/EventHandler.o: Core/EventHandler.cpp.o
 .PHONY : Core/EventHandler.o
@@ -224,6 +248,30 @@ Core/Window.s: Core/Window.cpp.s
 Core/Window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Core/Window.cpp.s
 .PHONY : Core/Window.cpp.s
+
+ICompute.o: ICompute.cpp.o
+.PHONY : ICompute.o
+
+# target to build an object file
+ICompute.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/ICompute.cpp.o
+.PHONY : ICompute.cpp.o
+
+ICompute.i: ICompute.cpp.i
+.PHONY : ICompute.i
+
+# target to preprocess a source file
+ICompute.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/ICompute.cpp.i
+.PHONY : ICompute.cpp.i
+
+ICompute.s: ICompute.cpp.s
+.PHONY : ICompute.s
+
+# target to generate assembly for a file
+ICompute.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/ICompute.cpp.s
+.PHONY : ICompute.cpp.s
 
 Main.o: Main.cpp.o
 .PHONY : Main.o
@@ -453,15 +501,21 @@ help:
 	@echo "... Application.o"
 	@echo "... Application.i"
 	@echo "... Application.s"
-	@echo "... Compute.o"
-	@echo "... Compute.i"
-	@echo "... Compute.s"
+	@echo "... ComputeShaders/LorenzAttractor.o"
+	@echo "... ComputeShaders/LorenzAttractor.i"
+	@echo "... ComputeShaders/LorenzAttractor.s"
+	@echo "... ComputeShaders/SlimeMold.o"
+	@echo "... ComputeShaders/SlimeMold.i"
+	@echo "... ComputeShaders/SlimeMold.s"
 	@echo "... Core/EventHandler.o"
 	@echo "... Core/EventHandler.i"
 	@echo "... Core/EventHandler.s"
 	@echo "... Core/Window.o"
 	@echo "... Core/Window.i"
 	@echo "... Core/Window.s"
+	@echo "... ICompute.o"
+	@echo "... ICompute.i"
+	@echo "... ICompute.s"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"

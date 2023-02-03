@@ -21,8 +21,18 @@
 },
 {
   "directory": "/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build",
-  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/Compute.cpp.o -c /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Compute.cpp",
-  "file": "/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Compute.cpp"
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/ICompute.cpp.o -c /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/ICompute.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/ICompute.cpp"
+},
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build",
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/ComputeShaders/LorenzAttractor.cpp.o -c /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/ComputeShaders/LorenzAttractor.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/ComputeShaders/LorenzAttractor.cpp"
+},
+{
+  "directory": "/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build",
+  "command": "/usr/bin/c++  -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/../vendor/glad/include -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/../vendor/glm/glm -isystem /usr/include/SDL2  -o CMakeFiles/TSP_Metaheuristics.dir/ComputeShaders/SlimeMold.cpp.o -c /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/ComputeShaders/SlimeMold.cpp",
+  "file": "/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/ComputeShaders/SlimeMold.cpp"
 },
 {
   "directory": "/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build",

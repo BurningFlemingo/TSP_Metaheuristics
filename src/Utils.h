@@ -35,6 +35,9 @@ public:
     inline uint64_t endTimer() {
         return std::chrono::duration_cast<T>(std::chrono::high_resolution_clock::now() - m_StartTime).count();
     }
+    inline uint64_t getTime() {
+        return std::chrono::duration_cast<T>(std::chrono::time_point_cast<T>(std::chrono::high_resolution_clock::now()).time_since_epoch()).count(); 
+    }
 private:
     std::chrono::high_resolution_clock::time_point m_StartTime;
 };
