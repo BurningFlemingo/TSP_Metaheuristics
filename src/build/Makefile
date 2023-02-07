@@ -417,29 +417,29 @@ Renderer/VertexBufferLayout.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/Renderer/VertexBufferLayout.cpp.s
 .PHONY : Renderer/VertexBufferLayout.cpp.s
 
-TSP/TSP.o: TSP/TSP.cpp.o
-.PHONY : TSP/TSP.o
+TSP.o: TSP.cpp.o
+.PHONY : TSP.o
 
 # target to build an object file
-TSP/TSP.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/TSP/TSP.cpp.o
-.PHONY : TSP/TSP.cpp.o
+TSP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/TSP.cpp.o
+.PHONY : TSP.cpp.o
 
-TSP/TSP.i: TSP/TSP.cpp.i
-.PHONY : TSP/TSP.i
+TSP.i: TSP.cpp.i
+.PHONY : TSP.i
 
 # target to preprocess a source file
-TSP/TSP.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/TSP/TSP.cpp.i
-.PHONY : TSP/TSP.cpp.i
+TSP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/TSP.cpp.i
+.PHONY : TSP.cpp.i
 
-TSP/TSP.s: TSP/TSP.cpp.s
-.PHONY : TSP/TSP.s
+TSP.s: TSP.cpp.s
+.PHONY : TSP.s
 
 # target to generate assembly for a file
-TSP/TSP.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/TSP/TSP.cpp.s
-.PHONY : TSP/TSP.cpp.s
+TSP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/TSP.cpp.s
+.PHONY : TSP.cpp.s
 
 Utils.o: Utils.cpp.o
 .PHONY : Utils.o
@@ -534,9 +534,9 @@ help:
 	@echo "... Renderer/VertexBufferLayout.o"
 	@echo "... Renderer/VertexBufferLayout.i"
 	@echo "... Renderer/VertexBufferLayout.s"
-	@echo "... TSP/TSP.o"
-	@echo "... TSP/TSP.i"
-	@echo "... TSP/TSP.s"
+	@echo "... TSP.o"
+	@echo "... TSP.i"
+	@echo "... TSP.s"
 	@echo "... Utils.o"
 	@echo "... Utils.i"
 	@echo "... Utils.s"
