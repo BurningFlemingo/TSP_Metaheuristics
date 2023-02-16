@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cmake ..
+cmake ...
 make
 mv compile_commands.json ..
