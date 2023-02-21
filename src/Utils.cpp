@@ -1,6 +1,8 @@
 #include "Utils.h"
 #include "Core/Debug.h"
 
+std::mt19937 rng;
+
 glm::mat4 modelPivotSquare(glm::mat4& model, float rotation, float w, float h, uint pivot) {
     switch (pivot) {
         case 0: {
@@ -42,6 +44,16 @@ glm::mat4 modelPivotSquare(glm::mat4& model, float rotation, float w, float h, u
     }
 }
 
+void seedRandNum(uint64_t seed) {
+    rng.seed(seed);
+}
 int randNum(int min, int max) {
-    return (rand() % (max - min + 1) + min);
+    return (rng() % (max - min + 1) + min);
+}
+
+
+void printOpenglInfo() {
+    print("---------------");
+    std::cout << "vendor: " << glGetString(GL_VENDOR) << std::endl;;
+    std::cout << "renderer: " << glGetString(GL_RENDERER) << std::endl;;
 }

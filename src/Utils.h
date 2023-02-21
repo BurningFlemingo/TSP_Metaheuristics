@@ -24,6 +24,7 @@ private:
 };
 
 glm::mat4 modelPivotSquare(glm::mat4& model, float rotation, float w, float h, uint pivot);
+void seedRandNum(uint64_t seed);
 int randNum(int min, int max);
 
 template<typename T>
@@ -41,3 +42,5 @@ public:
 private:
     std::chrono::high_resolution_clock::time_point m_StartTime;
 };
+
+void printOpenglInfo();

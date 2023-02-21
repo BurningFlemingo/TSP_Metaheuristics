@@ -1,14 +1,14 @@
 #version 460 core
 
 layout (local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
-layout (rgba32f, binding = 1) uniform image2D trail;
+layout (rgba32f, binding = 0) uniform image2D trail;
 
 uniform float deltaTime;
 uniform float decay;
 uniform float diffusionRate;
 
-vec4 lerp(vec4 previous, vec4 current, float distance) {
-    return vec4(previous + (current - previous) * distance);
+vec4 lerp(vec4 a, vec4 b, float t) {
+    return vec4((a + (b - a) * t));
 }
 
 vec4 maxVec(vec4 v1, vec4 v2) {
@@ -21,7 +21,7 @@ vec4 maxVec(vec4 v1, vec4 v2) {
 
 float maxFloat(float v1, float v2) {
     if (v1 > v2) {
-            return v1;
+        return v1;
     }
     return v2;
 }
@@ -32,19 +32,20 @@ void main() {
     vec4 ogPixel = imageLoad(trail, pixelLocation);
 
     vec4 sum = vec4(0);
-    for (int xOffset = -1; xOffset <= 1; xOffset++) {
-        for (int yOffset = -1; yOffset <= 1; yOffset++) {
-            vec2 sampleValue = vec2(id.x + xOffset, id.y + yOffset);
+    for (int x = -1; x <= 1; x++) {
+        for (int y = -1; y <= 1; y++) {
+            vec2 sampleValue = vec2(id.x + x, id.y + y);
 
             sum += imageLoad(trail, ivec2(sampleValue));
         }
     }
 
     vec4 boxBlur = sum / 9;
+    float e = 2.7182818;
 
-    vec4 diffusion = lerp(ogPixel, boxBlur, max(0.0f, min(1.0f, diffusionRate)));  // clamping
-    float trailConcentration = max(0.0, min(1.0f, diffusion.w - decay * deltaTime));
-    vec4 pixel = maxVec(vec4(0), vec4(diffusion.xyz, trailConcentration));
+    vec4 diffuse = lerp(ogPixel, boxBlur, max(0.0, min(1.0, diffusionRate)));
+    float trailConcentration = max(0.0, min(1.0f, diffuse.w - decay * deltaTime));
+    vec4 pixel = vec4(diffuse.xyz, trailConcentration);
     
     imageStore(trail, pixelLocation, pixel);
 }

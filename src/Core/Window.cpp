@@ -77,12 +77,10 @@ Window& createWindow(const WindowPropertys& windowProps) {
 
     SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, true);
 
-    // SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
-    // SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 2);
+    SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
+    SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 5);
 
-    // SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
-
-    // glEnable(GL_MULTISAMPLE);
+    SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
 
     Window* window = new Window;
 
@@ -111,6 +109,7 @@ Window& createWindow(const WindowPropertys& windowProps) {
     }
 
     log("Window and Context created", INFO);
+    glEnable(GL_BLEND);
 
     return *window;
 }

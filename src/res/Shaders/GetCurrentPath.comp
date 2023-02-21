@@ -1,0 +1,162 @@
+#version 460 core
+
+layout (local_size_x = 64, local_size_y = 1, local_size_z = 1) in;
+layout (rgba32f, binding = 0) uniform image2D trail;
+
+layout (binding = 1) buffer SSBO_1 {
+    vec4 cityPositions[];
+};
+
+layout (binding = 2) buffer SSBO_2 {
+    uint path[];
+};
+
+uniform uint count;
+uniform uint time;
+
+uint hash(uint state) {
+        state ^= 2747636419u;
+        state *= 2654435769u;
+        state ^= state >> 16;
+        state *= 2654435769u;
+        state ^= state >> 16;
+        state *= 2654435769u;
+        return state;
+}
+
+uint pRandNum(uint min, uint max, uint hashState) {
+    uint randNum = hash(hashState);
+    uint clampedNum = randNum % (max - min + 1) + min;
+    return clampedNum;
+}
+
+float castRay(vec2 origin, vec2 direction, float size) {
+    ivec2 id = ivec2(gl_GlobalInvocationID.xy);
+
+    float xSlope = direction.y / direction.x;
+    float ySlope = direction.x / direction.y; 
+    vec2 rayStepSize = vec2(sqrt(1 + (xSlope * xSlope)), sqrt(1 + (ySlope * ySlope)));
+
+    vec2 rayLength = vec2(0, 0);
+
+    // used to prevent ray from interacting with particles own trail
+    float distanceFromOrigin = 10;
+    ivec2 cellIntermediate = ivec2(origin + direction * distanceFromOrigin);  // used to truncate
+    vec2 cell = vec2(cellIntermediate);
+
+    vec2 step = vec2(0);
+
+    if (direction.x < 0) {
+        step.x = -1;
+        rayLength.x = (origin.x - (cell.x)) * rayStepSize.x;
+    } else {
+        step.x = 1;
+        rayLength.x = ((cell.x + 1) - origin.x) * rayStepSize.x;
+    }
+
+    if (direction.y < 0) {
+        step.y = -1;
+        rayLength.y = (origin.y - (cell.y)) * rayStepSize.y;
+    } else {
+        step.y = 1;
+        rayLength.y = ((cell.y + 1) - origin.y) * rayStepSize.y;
+    }
+
+    bool intersection = false;
+    float distance = 0;
+    float accumulator = 0.0;
+    float threshold = 0.0;
+    while(!intersection && distance < size) {
+        if (rayLength.x < rayLength.y) {
+            cell.x += step.x;
+            rayLength.x += rayStepSize.x;
+            distance = rayLength.x;
+        } else {
+            cell.y += step.y;
+            distance = rayLength.y;
+            rayLength.y += rayStepSize.y;
+        }
+
+        float concentration = imageLoad(trail, ivec2(cell.x, cell.y)).w;
+        if (concentration > threshold) {
+            accumulator += concentration;
+        }
+    }
+
+    return accumulator;
+}
+
+bool existsInPath(int node) {
+    for (int i = 0; i < count; i++) {
+        if (path[i] == node) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void main() {
+    float PI = 3.151594;
+    ivec2 id = ivec2(gl_GlobalInvocationID.xy);
+    uint state = id.x * time;
+
+    if (id.x < count) {
+        shared uint bound = 0;
+
+        shared uint freeNodes[100];  // max number of citys
+        shared uint sizeofFreeNodes = count;
+
+        for (int i = 0; i < sizeofFreeNodes; i++) {
+            freeNodes[i] = i;
+        }
+
+        barrier();
+        memoryBarrierShared();
+
+        for (int i = 0; i < count; i++) {
+            shared float concentration = 0;
+            shared uint bestNode = -1;
+
+            if (id.x < sizeofFreeNodes) {
+                vec2 p1 = cityPositions[bound].xy;
+                vec2 p2 = cityPositions[freeNodes[id.x]].xy;
+                vec2 diff = p2 - p1;
+                float mag = distance(p2, p1);
+                vec2 normalized = normalize(diff);
+                
+                float currentConcentration = castRay(p1, normalized, mag - 10) / (mag - 10);
+
+                if (currentConcentration > concentration) {
+                    concentration = currentConcentration;
+                    bestNode = id.x;
+                }
+            }
+
+            barrier();
+            memoryBarrierShared();
+
+            // if no best was found, increment bound
+            if (bestNode == -1) {
+                bound = freeNodes[0];
+                path[i] = bound;
+
+                freeNodes[0] = freeNodes[sizeofFreeNodes - 1];
+                freeNodes[sizeofFreeNodes - 1] = -1;
+                sizeofFreeNodes--;
+            } else {
+                bound = freeNodes[bestNode];
+                path[i] = freeNodes[bestNode];
+
+                freeNodes[bestNode] = freeNodes[sizeofFreeNodes - 1];
+                freeNodes[sizeofFreeNodes - 1] = -1;
+                sizeofFreeNodes--;
+            }
+        }
+
+        for (int i = 0; i < sizeofFreeNodes; i++) {
+            if (freeNodes[i] < count) {
+                path[freeNodes[i]] = path[freeNodes[i] + 1];
+            }
+        }
+    }
+}

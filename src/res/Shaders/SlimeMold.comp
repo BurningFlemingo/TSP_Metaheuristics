@@ -1,21 +1,28 @@
 #version 460 core
 
-layout (local_size_x = 16, local_size_y = 1, local_size_z = 1) in;
-layout (rgba32f, binding = 0) uniform image2D screen;
-layout (rgba32f, binding = 1) uniform image2D trail;
+layout (local_size_x = 64, local_size_y = 1, local_size_z = 1) in;
+layout (rgba32f, binding = 0) uniform image2D trail;
+layout (rgba32f, binding = 1) uniform image2D screen;
+layout (rgba32f, binding = 2) readonly uniform image2D TSP;
 
 struct Particle {
     vec4 position;
-    vec4 color;
 };
 
-layout (binding = 1) buffer SSBO_1 {
+layout (binding = 3) buffer SSBO_1 {
     Particle particles[];
 };
 
+uniform vec3 color;
 uniform uint time;
 uniform uint count;
 uniform float deltaTime;
+uniform float detectionThreshold;
+uniform float trailReleseThreshold;
+uniform float turnThreshold;
+uniform float forwardRayDistance;
+uniform float sideRayDistances;
+uniform float foodValue;
 
 uint hash(uint state) {
         state ^= 2747636419u;
@@ -33,41 +40,125 @@ uint pRandNum(uint min, uint max, uint hashState) {
     return clampedNum;
 }
 
-void update(float dT) {
+float castRay(vec2 origin, vec2 direction, float size) {
+    ivec2 id = ivec2(gl_GlobalInvocationID.xy);
+
+    float xSlope = direction.y / direction.x;
+    float ySlope = direction.x / direction.y; 
+    vec2 rayStepSize = vec2(sqrt(1 + (xSlope * xSlope)), sqrt(1 + (ySlope * ySlope)));
+
+    vec2 rayLength = vec2(0, 0);
+
+    // used to prevent ray from interacting with particles own trail and city
+    float distanceFromOrigin = 21;
+    ivec2 cellIntermediate = ivec2(origin + direction * distanceFromOrigin);  // used to truncate
+    vec2 cell = vec2(cellIntermediate);
+
+    vec2 step = vec2(0);
+
+    if (direction.x < 0) {
+        step.x = -1;
+        rayLength.x = (origin.x - (cell.x)) * rayStepSize.x;
+    } else {
+        step.x = 1;
+        rayLength.x = ((cell.x + 1) - origin.x) * rayStepSize.x;
+    }
+
+    if (direction.y < 0) {
+        step.y = -1;
+        rayLength.y = (origin.y - (cell.y)) * rayStepSize.y;
+    } else {
+        step.y = 1;
+        rayLength.y = ((cell.y + 1) - origin.y) * rayStepSize.y;
+    }
+
+    bool intersection = false;
+    float distance = 0;
+    float accumulator = 0.0;
+    float threshold = detectionThreshold;
+    while(!intersection && distance < size) {
+        if (rayLength.x < rayLength.y) {
+            cell.x += step.x;
+            rayLength.x += rayStepSize.x;
+            distance = rayLength.x;
+        } else {
+            cell.y += step.y;
+            distance = rayLength.y;
+            rayLength.y += rayStepSize.y;
+        }
+
+        if (imageLoad(TSP, ivec2(cell.x, cell.y)).w > 0) {
+            accumulator += foodValue;
+        }
+        float concentration = imageLoad(trail, ivec2(cell.x, cell.y)).w;
+        if (concentration > threshold) {
+            accumulator += concentration;
+        }
+    }
+
+    return accumulator;
+}
+
+float update(float dT) {
     float PI = 3.151594;
     ivec2 id = ivec2(gl_GlobalInvocationID.xy);
     uint screenArea = (1920 / 2) * (1080 / 2);
     uint state = id.x * time * screenArea;
 
-    float speed = 100.0f;
+    float speed = 300.0f;
     float rateOfChange = deltaTime * speed;
 
     vec2 pos = particles[id.x].position.xy;
     float rotation = particles[id.x].position.w;
-    vec2 direction = vec2(cos(rotation), -sin(rotation));
+
+    vec2 directionForward = vec2(cos(rotation), sin(rotation));
+    vec2 directionRight = vec2(cos(rotation + (45 * PI) / 180), sin(rotation + (45 * PI) / 180));
+    vec2 directionLeft = vec2(cos(rotation - (45 * PI) / 180), sin(rotation - (45 * PI) / 180));
+
+    float rayForward = castRay(pos, directionForward, forwardRayDistance); 
+    float rayRight = castRay(pos, directionRight, sideRayDistances); 
+    float rayLeft = castRay(pos, directionLeft, sideRayDistances); 
+
+    float prevRotation = rotation;
+    float trailRelease = 1.0;
+
+    float releseThreashold = trailReleseThreshold;
+    // follow food
+    if (rayRight > rayLeft) {
+        rotation += ((45 * PI) / 180) * min(1, (rayRight + 0.1) / max(0.1, turnThreshold));
+    }
+    if (rayLeft > rayRight) {
+        rotation -= ((45 * PI) / 180) * min(1, (rayLeft + 0.1) / max(0.1, turnThreshold));
+    }
+    if (rayForward >= rayLeft && rayForward >= rayRight) {
+        rotation = prevRotation;
+    }
+
+    if (rayForward <= 0.1 && rayLeft <= 0.1 && rayRight <= 0.1) {
+        rotation = prevRotation + (((pRandNum(0, 90, state)) * PI) / 180) + ((-45 * PI) / 180);
+    }
+
+    vec2 direction = vec2(cos(rotation), sin(rotation));
 
     vec2 newPos = pos + (direction * rateOfChange);
 
-    if (newPos.x < 0 || newPos.x >= 960 || newPos.y < 0 || newPos.y >= 540) {
-        newPos.x = min(960 - 0.01, max(0, newPos.x));
-        newPos.y = min(540 - 0.01, max(0, newPos.y));
-        particles[id.x].position.w = pRandNum(0, 360, state);
-    }
+    particles[id.x].position = vec4(newPos, 0.0f, rotation);
+    particles[id.x].position.w = rotation;
 
-    particles[id.x].position.xy = newPos;
+    return trailRelease;
 }
 
 void main() {
     ivec2 pixelCoords = ivec2(gl_GlobalInvocationID.xy);
-    vec4 pixel = vec4(0.0f, 0.0f, 0.0f, 1.0f);
+    vec4 pixel = vec4(0.0f, 0.0f, 0.0f, 0.0f);
 
     if (gl_GlobalInvocationID.x < count) {
-        update(deltaTime);
+        float concentrationOfTrail = update(deltaTime);
         vec2 position = particles[gl_GlobalInvocationID.x].position.xy;
         pixelCoords = ivec2(position.x, position.y);
-        pixel = particles[gl_GlobalInvocationID.x].color;
+        pixel = vec4(color, concentrationOfTrail);
     }
 
-    imageStore(screen, pixelCoords, pixel);
+    imageStore(screen, pixelCoords, vec4(1.0));
     imageStore(trail, pixelCoords, pixel);
 }
