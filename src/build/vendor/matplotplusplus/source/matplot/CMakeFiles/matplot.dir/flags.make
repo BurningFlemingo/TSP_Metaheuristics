@@ -6,5 +6,5 @@ CXX_DEFINES = -DMATPLOT_HAS_FBUFSIZE -DNOMINMAX -Dcimg_display=0 -Dcimg_use_fftw
 
 CXX_INCLUDES = -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/TSP_Metaheuristics -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/vendor/glad/include -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/vendor/glm/glm -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/vendor/xlnt/include -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src -I/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/vendor/matplotplusplus/source -isystem /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/vendor/matplotplusplus/source/3rd_party/cimg -isystem /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/vendor/matplotplusplus/source/3rd_party/nodesoup/include
 
-CXX_FLAGS =  -O2 -std=gnu++17
+CXX_FLAGS = -O3 -std=gnu++17
 

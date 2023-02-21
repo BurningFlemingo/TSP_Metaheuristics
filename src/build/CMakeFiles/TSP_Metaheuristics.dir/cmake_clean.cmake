@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TSP_Metaheuristics.dir/src/Application.cpp.o"
   "CMakeFiles/TSP_Metaheuristics.dir/src/Application.cpp.o.d"
+  "CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.o"
+  "CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.o.d"
   "CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/SlimeMold.cpp.o"
   "CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/SlimeMold.cpp.o.d"
   "CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.o"

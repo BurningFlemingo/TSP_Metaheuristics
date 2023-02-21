@@ -167,10 +167,24 @@ CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/SlimeMold.cpp.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/SlimeMold.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/ComputeShaders/SlimeMold.cpp -o CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/SlimeMold.cpp.s
 
+CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/flags.make
+CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.o: /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/ComputeShaders/AntColony.cpp
+CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.o -MF CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.o.d -o CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.o -c /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/ComputeShaders/AntColony.cpp
+
+CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/ComputeShaders/AntColony.cpp > CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.i
+
+CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/ComputeShaders/AntColony.cpp -o CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.s
+
 CMakeFiles/TSP_Metaheuristics.dir/src/Core/Window.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/flags.make
 CMakeFiles/TSP_Metaheuristics.dir/src/Core/Window.cpp.o: /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Core/Window.cpp
 CMakeFiles/TSP_Metaheuristics.dir/src/Core/Window.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/Core/Window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/Core/Window.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TSP_Metaheuristics.dir/src/Core/Window.cpp.o -MF CMakeFiles/TSP_Metaheuristics.dir/src/Core/Window.cpp.o.d -o CMakeFiles/TSP_Metaheuristics.dir/src/Core/Window.cpp.o -c /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Core/Window.cpp
 
 CMakeFiles/TSP_Metaheuristics.dir/src/Core/Window.cpp.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/TSP_Metaheuristics.dir/src/Core/Window.cpp.s: cmake_force
 CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/flags.make
 CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.o: /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Core/EventHandler.cpp
 CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.o -MF CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.o.d -o CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.o -c /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Core/EventHandler.cpp
 
 CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.s: cmake_force
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Renderer.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/flags.make
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Renderer.cpp.o: /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Renderer/Renderer.cpp
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Renderer.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Renderer.cpp.o -MF CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Renderer.cpp.o.d -o CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Renderer.cpp.o -c /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Renderer/Renderer.cpp
 
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Renderer.cpp.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Renderer.cpp.s: cmake_force
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shader.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/flags.make
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shader.cpp.o: /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Renderer/Shader.cpp
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shader.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shader.cpp.o -MF CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shader.cpp.o.d -o CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shader.cpp.o -c /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Renderer/Shader.cpp
 
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shader.cpp.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shader.cpp.s: cmake_force
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shapes.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/flags.make
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shapes.cpp.o: /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Renderer/Shapes.cpp
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shapes.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shapes.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shapes.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shapes.cpp.o -MF CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shapes.cpp.o.d -o CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shapes.cpp.o -c /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Renderer/Shapes.cpp
 
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shapes.cpp.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Shapes.cpp.s: cmake_force
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/VertexBufferLayout.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/flags.make
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/VertexBufferLayout.cpp.o: /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Renderer/VertexBufferLayout.cpp
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/VertexBufferLayout.cpp.o: CMakeFiles/TSP_Metaheuristics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/VertexBufferLayout.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/VertexBufferLayout.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/VertexBufferLayout.cpp.o -MF CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/VertexBufferLayout.cpp.o.d -o CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/VertexBufferLayout.cpp.o -c /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/Renderer/VertexBufferLayout.cpp
 
 CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/VertexBufferLayout.cpp.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/VertexBufferLayout.cpp.s: cmake_f
 CMakeFiles/TSP_Metaheuristics.dir/vendor/glad/src/glad.c.o: CMakeFiles/TSP_Metaheuristics.dir/flags.make
 CMakeFiles/TSP_Metaheuristics.dir/vendor/glad/src/glad.c.o: /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/vendor/glad/src/glad.c
 CMakeFiles/TSP_Metaheuristics.dir/vendor/glad/src/glad.c.o: CMakeFiles/TSP_Metaheuristics.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/TSP_Metaheuristics.dir/vendor/glad/src/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/TSP_Metaheuristics.dir/vendor/glad/src/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TSP_Metaheuristics.dir/vendor/glad/src/glad.c.o -MF CMakeFiles/TSP_Metaheuristics.dir/vendor/glad/src/glad.c.o.d -o CMakeFiles/TSP_Metaheuristics.dir/vendor/glad/src/glad.c.o -c /home/unmeinks/workspace/dev/projects/tsp_metaheuristics/vendor/glad/src/glad.c
 
 CMakeFiles/TSP_Metaheuristics.dir/vendor/glad/src/glad.c.i: cmake_force
@@ -274,6 +288,7 @@ TSP_Metaheuristics_OBJECTS = \
 "CMakeFiles/TSP_Metaheuristics.dir/src/ICompute.cpp.o" \
 "CMakeFiles/TSP_Metaheuristics.dir/src/TSP.cpp.o" \
 "CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/SlimeMold.cpp.o" \
+"CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.o" \
 "CMakeFiles/TSP_Metaheuristics.dir/src/Core/Window.cpp.o" \
 "CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.o" \
 "CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Renderer.cpp.o" \
@@ -292,6 +307,7 @@ TSP_Metaheuristics: CMakeFiles/TSP_Metaheuristics.dir/src/Application.cpp.o
 TSP_Metaheuristics: CMakeFiles/TSP_Metaheuristics.dir/src/ICompute.cpp.o
 TSP_Metaheuristics: CMakeFiles/TSP_Metaheuristics.dir/src/TSP.cpp.o
 TSP_Metaheuristics: CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/SlimeMold.cpp.o
+TSP_Metaheuristics: CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.o
 TSP_Metaheuristics: CMakeFiles/TSP_Metaheuristics.dir/src/Core/Window.cpp.o
 TSP_Metaheuristics: CMakeFiles/TSP_Metaheuristics.dir/src/Core/EventHandler.cpp.o
 TSP_Metaheuristics: CMakeFiles/TSP_Metaheuristics.dir/src/Renderer/Renderer.cpp.o
@@ -320,7 +336,7 @@ TSP_Metaheuristics: /usr/lib/libfftw3f_omp.so
 TSP_Metaheuristics: /usr/lib/libfftw3l_omp.so
 TSP_Metaheuristics: vendor/matplotplusplus/source/3rd_party/libnodesoup.a
 TSP_Metaheuristics: CMakeFiles/TSP_Metaheuristics.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable TSP_Metaheuristics"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/unmeinks/workspace/dev/projects/tsp_metaheuristics/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable TSP_Metaheuristics"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TSP_Metaheuristics.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

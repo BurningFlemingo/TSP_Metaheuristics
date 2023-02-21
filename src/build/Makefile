@@ -179,6 +179,30 @@ src/Application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/src/Application.cpp.s
 .PHONY : src/Application.cpp.s
 
+src/ComputeShaders/AntColony.o: src/ComputeShaders/AntColony.cpp.o
+.PHONY : src/ComputeShaders/AntColony.o
+
+# target to build an object file
+src/ComputeShaders/AntColony.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.o
+.PHONY : src/ComputeShaders/AntColony.cpp.o
+
+src/ComputeShaders/AntColony.i: src/ComputeShaders/AntColony.cpp.i
+.PHONY : src/ComputeShaders/AntColony.i
+
+# target to preprocess a source file
+src/ComputeShaders/AntColony.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.i
+.PHONY : src/ComputeShaders/AntColony.cpp.i
+
+src/ComputeShaders/AntColony.s: src/ComputeShaders/AntColony.cpp.s
+.PHONY : src/ComputeShaders/AntColony.s
+
+# target to generate assembly for a file
+src/ComputeShaders/AntColony.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TSP_Metaheuristics.dir/build.make CMakeFiles/TSP_Metaheuristics.dir/src/ComputeShaders/AntColony.cpp.s
+.PHONY : src/ComputeShaders/AntColony.cpp.s
+
 src/ComputeShaders/SlimeMold.o: src/ComputeShaders/SlimeMold.cpp.o
 .PHONY : src/ComputeShaders/SlimeMold.o
 
@@ -505,6 +529,9 @@ help:
 	@echo "... src/Application.o"
 	@echo "... src/Application.i"
 	@echo "... src/Application.s"
+	@echo "... src/ComputeShaders/AntColony.o"
+	@echo "... src/ComputeShaders/AntColony.i"
+	@echo "... src/ComputeShaders/AntColony.s"
 	@echo "... src/ComputeShaders/SlimeMold.o"
 	@echo "... src/ComputeShaders/SlimeMold.i"
 	@echo "... src/ComputeShaders/SlimeMold.s"
