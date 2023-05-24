@@ -1,5 +1,4 @@
 # TSP_Metaheuristics
-An evaluation of metaheuristics in the tsp
 
 ![Screenshot_20230228_065441](https://user-images.githubusercontent.com/99134379/221833784-3f7adc87-ce02-44b7-bff6-8cba93440d4c.png)
 
